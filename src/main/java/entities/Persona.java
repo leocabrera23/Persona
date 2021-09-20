@@ -18,10 +18,15 @@ import javax.persistence.Table;
 
 import org.hibernate.envers.Audited;
 
+import com.sun.istack.NotNull;
+
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name="Persona")
@@ -29,7 +34,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 @Audited
+@ToString
 public class Persona extends Base {
 	
 	@Column(name ="nombre")
@@ -48,5 +55,5 @@ public class Persona extends Base {
 			name="persona_libro",
 			joinColumns=@JoinColumn(name="persona_id"),
 			inverseJoinColumns = @JoinColumn(name="libro_id"))
-	private List<Libro> libros = new ArrayList<Libro>(); 
+	final private List<Libro> libros = new ArrayList<Libro>(); 
 }
