@@ -6,6 +6,8 @@ import javax.persistence.Table;
 
 import org.hibernate.envers.Audited;
 
+import com.sun.istack.NotNull;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -20,11 +22,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @Audited
 @Builder
-public class Autor extends Base{
+public class Autor extends Base {
 	@Column(name="nombre")
-	private String nombre;
+	@NotNull String nombre;
 	@Column(name="apellido")
-	private String apellido;
+	@NotNull String apellido;
 	@Column(name="biografia", length = 1500)
-	private String bigrafia;
+	@NotNull String bigrafia;
 }

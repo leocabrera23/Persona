@@ -16,7 +16,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
+
 
 @Entity
 @Table(name="Libro")
@@ -26,7 +26,6 @@ import lombok.ToString;
 @AllArgsConstructor
 @Builder
 @Audited
-@ToString
 public class Libro extends Base{
 	@Column(name="titulo")
 	private String titulo;

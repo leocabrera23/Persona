@@ -1,13 +1,9 @@
 package main;
 
-import java.util.ArrayList;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.swing.JOptionPane;
-
-import org.hibernate.mapping.Array;
 
 import entities.Autor;
 import entities.Domicilio;
@@ -59,7 +55,6 @@ public class PersonaApplication {
 			
 			em.flush();
 			em.getTransaction().commit();
-			JOptionPane.showMessageDialog(null, libro.toString());
 			
 		} catch (Exception e) {
 			em.getTransaction().rollback();
