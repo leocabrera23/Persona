@@ -23,7 +23,7 @@ public class PersonaApplication {
 			Autor autor = Autor.builder()
 					.nombre("Lorem")
 					.apellido("ipsum")
-					.bigrafia("Lorem ipsum ")
+					.biografia("Lorem ipsum ")
 					.build();
 			
 			Libro libro = Libro.builder()
@@ -40,7 +40,7 @@ public class PersonaApplication {
 			Domicilio domicilio = Domicilio.builder()
 					.calle("Alemanes")
 					.numero(123)
-					.localida(localidad)
+					.localidad(localidad)
 					.build();
 			
 			Persona persona = Persona.builder()
@@ -53,6 +53,11 @@ public class PersonaApplication {
 			libro.getAutores().add(autor);
 			persona.getLibros().add(libro);
 			
+			em.persist(autor);
+			em.persist(libro);
+			em.persist(localidad);
+			em.persist(domicilio);
+			em.persist(persona);
 			em.flush();
 			em.getTransaction().commit();
 			

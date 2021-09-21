@@ -30,5 +30,5 @@ public class Domicilio extends Base{
 	
 	@ManyToOne(optional=false)
 	@JoinColumn(name="localidad")
-	private Localidad localida;
+	private Localidad localidad;
 }

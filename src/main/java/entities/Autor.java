@@ -28,5 +28,5 @@ public class Autor extends Base {
 	@Column(name="apellido")
 	@NotNull String apellido;
 	@Column(name="biografia", length = 1500)
-	@NotNull String bigrafia;
+	@NotNull String biografia;
 }
